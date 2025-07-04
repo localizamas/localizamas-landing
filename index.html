@@ -3,387 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Localiza+ - Construimos Sistemas de Crecimiento</title>
-    <meta name="description" content="Somos el socio estratégico que implementa los sistemas de marketing y ventas para que las pymes y emprendedores de Los Ángeles dejen de perder clientes.">
+    <title>Localiza+ - Deja de Perder Clientes Online | Concepción, Bio Bio</title>
+    <meta name="description" content="¿Eres experto en tu negocio pero sigues perdiendo clientes online? Descubre nuestro sistema probado para pymes en Concepción. Diagnóstico gratuito disponible.">
     
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --color-white: #FFFFFF;
-            --color-light-gray: #F8F9FA;
-            --color-dark-text: #212529;
-            --color-primary-blue: #0A1F33;
-            --color-accent-orange: #F37021;
+            --primary-blue: #0A1F33;
+            --accent-orange: #F37021;
+            --text-dark: #212529;
+            --bg-light: #F8F9FA;
         }
-
+        
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
             font-family: 'Lato', sans-serif;
-            color: var(--color-dark-text);
-            line-height: 1.6;
-            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
         }
 
         html {
             scroll-behavior: smooth;
         }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--color-primary-blue);
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1a3a52 100%);
         }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        
         .btn-primary {
-            background: linear-gradient(135deg, var(--color-accent-orange), #e55a1a);
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            padding: 18px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-block;
+            background: var(--accent-orange);
+            border: none;
             transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(243, 112, 33, 0.3);
         }
-
+        
         .btn-primary:hover {
+            background: #e55a0a;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(243, 112, 33, 0.4);
-            background: linear-gradient(135deg, #e55a1a, var(--color-accent-orange));
+            box-shadow: 0 8px 25px rgba(243, 112, 33, 0.3);
         }
-
-        .btn-cta {
-            background: linear-gradient(135deg, var(--color-primary-blue), #1a3a5c);
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            padding: 24px 48px;
-            border-radius: 12px;
-            text-decoration: none;
-            display: inline-block;
+        
+        .card-hover {
             transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-size: 1.1rem;
-            box-shadow: 0 6px 25px rgba(10, 31, 51, 0.3);
         }
-
-        .btn-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(10, 31, 51, 0.4);
-            background: linear-gradient(135deg, #1a3a5c, var(--color-primary-blue));
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, var(--color-white) 0%, var(--color-light-gray) 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent 40%, rgba(243, 112, 33, 0.05) 50%, transparent 60%);
-            animation: shimmer 6s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .icon-card {
-            background: var(--color-white);
-            border-radius: 16px;
-            padding: 32px 24px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(10, 31, 51, 0.1);
-        }
-
-        .icon-card:hover {
+        
+        .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
-
-        .icon-card i {
-            font-size: 3rem;
-            color: var(--color-accent-orange);
-            margin-bottom: 24px;
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
         }
-
-        .process-card {
-            background: var(--color-white);
-            border-radius: 20px;
-            padding: 40px 32px;
-            text-align: center;
-            position: relative;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 2px solid rgba(10, 31, 51, 0.1);
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
-
-        .process-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        
+        .section-padding {
+            padding: 80px 0;
         }
-
-        .process-number {
-            background: linear-gradient(135deg, var(--color-primary-blue), #1a3a5c);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 1.5rem;
-            margin: 0 auto 24px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-alternate {
-            background: var(--color-light-gray);
-            position: relative;
-        }
-
-        .section-alternate::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(10, 31, 51, 0.1), transparent);
-        }
-
-        .highlight-text {
-            color: var(--color-accent-orange);
-            font-weight: 700;
-        }
-
-        .container-custom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
+        
         @media (max-width: 768px) {
-            .hero-section {
-                min-height: 80vh;
+            .section-padding {
+                padding: 60px 0;
             }
-            
-            .btn-primary {
-                padding: 16px 28px;
-                font-size: 0.9rem;
-            }
-            
-            .btn-cta {
-                padding: 20px 36px;
-                font-size: 1rem;
-            }
-            
-            .process-card {
-                padding: 32px 24px;
-            }
-            
-            .icon-card {
-                padding: 24px 16px;
-            }
-        }
-
-        .stats-highlight {
-            background: linear-gradient(135deg, var(--color-accent-orange), #e55a1a);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-weight: 700;
-            display: inline-block;
-            margin: 0 4px;
         }
     </style>
 </head>
 <body class="bg-white">
-    <section class="hero-section">
-        <div class="container-custom w-full">
-            <div class="fade-in text-center lg:text-left">
-                <div class="max-w-4xl mx-auto lg:mx-0">
-                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                        Construimos Sistemas de <span class="highlight-text">Crecimiento</span>.
-                    </h1>
-                    <p class="text-xl md:text-2xl mb-8 max-w-3xl leading-relaxed font-light">
-                        Somos el socio estratégico que implementa los sistemas de marketing y ventas para que las pymes y emprendedores de Los Ángeles dejen de perder clientes.
-                    </p>
-                    <a href="#diagnostico" class="btn-primary text-lg">
-                        <i class="fas fa-calendar-check mr-2"></i>
-                        Agendar Diagnóstico Gratuito
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="#hero" class="h-full py-2">
+                    <img src="logotipo.jpg" alt="Localiza+ Logo" class="h-full">
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#sistema" class="text-gray-700 hover:text-orange-500 transition duration-300">Sistema</a>
+                    <a href="#casos" class="text-gray-700 hover:text-orange-500 transition duration-300">Casos</a>
+                    <a href="#cta-final" class="text-gray-700 hover:text-orange-500 transition duration-300">Contacto</a>
+                </div>
+                <a href="#cta-final" class="btn-primary text-white px-4 py-2 rounded-lg font-semibold">
+                    Diagnóstico Gratuito
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero-gradient text-white section-padding mt-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    Eres Experto en tu Negocio.<br>
+                    <span class="text-orange-400">Pero Sigues Perdiendo Clientes Online.</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-200 font-light">
+                    Para las pymes de Concepción que están cansadas de publicar sin resultados, gastar dinero en marketing que no entienden y ver cómo clientes potenciales eligen a la competencia.
+                </p>
+                <div class="mb-12">
+                    <a href="#cta-final" class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg inline-flex items-center pulse-animation">
+                        <i class="fas fa-search-plus mr-3"></i>
+                        Agendar mi Diagnóstico Gratuito
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 lg:py-32">
-        <div class="container-custom">
-            <div class="fade-in text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6">¿Te suena familiar?</h2>
+    <section id="enemigo" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6" style="color: var(--primary-blue);">
+                    Si Has Hecho Esto, Estás Atrapado en el <span class="text-red-600">'Marketing de la Esperanza'</span>
+                </h2>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="fade-in icon-card">
-                    <i class="fas fa-brain"></i>
-                    <h3 class="text-xl font-semibold mb-4">Eres experto en lo tuyo... pero el marketing te abruma.</h3>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white rounded-lg p-8 shadow-lg card-hover border-l-4 border-red-500">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary-blue);">
+                        Inyectar Más Dinero en Anuncios
+                    </h3>
+                    <p class="text-gray-600">
+                        Pagas por Ads, pero los clientes no llegan. El problema no es cuánto inviertes, sino la ausencia de un sistema que convierta esa visibilidad en ventas.
+                    </p>
                 </div>
                 
-               <div class="fade-in icon-card">
-                    <i class="fas fa-puzzle-piece"></i>
-                    <h3 class="text-xl font-semibold mb-4">Has probado de todo... pero sigues sin ver resultados claros.</h3>
+                <div class="bg-white rounded-lg p-8 shadow-lg card-hover border-l-4 border-red-500">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary-blue);">
+                        La Trampa de la 'Web Bonita'
+                    </h3>
+                    <p class="text-gray-600">
+                        Tienes una web atractiva que nadie encuentra o que no está construida para convertir visitantes en dinero. Es un folleto caro.
+                    </p>
                 </div>
                 
-                <div class="fade-in icon-card">
-                    <i class="fas fa-handshake-slash"></i>
-                    <h3 class="text-xl font-semibold mb-4">Sabes que necesitas ayuda... pero te aterran los "vende humos".</h3>
+                <div class="bg-white rounded-lg p-8 shadow-lg card-hover border-l-4 border-red-500">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary-blue);">
+                        Confiar en el 'Boca a Boca'
+                    </h3>
+                    <p class="text-gray-600">
+                        Dependes de la suerte mientras tu competencia captura sistemáticamente a TUS nuevos clientes en Google.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-alternate py-20 lg:py-32">
-        <div class="container-custom">
-            <div class="fade-in text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-8">No vendemos tareas. Construimos tu <span class="highlight-text">motor</span>.</h2>
-                <p class="text-xl max-w-4xl mx-auto leading-relaxed">
-                    Podrías crear un perfil de Google o usar una IA para tu web. Tienes razón, las herramientas son accesibles. Pero nosotros no vendemos piezas sueltas. <strong>Construimos el motor completo</strong> que las conecta y las hace funcionar en un sistema diseñado para una sola cosa: generar dinero para tu negocio.
+    <section id="sistema" class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6" style="color: var(--primary-blue);">
+                    Dejamos de Adivinar. <span style="color: var(--accent-orange);">Instalamos tu Motor de Crecimiento.</span>
+                </h2>
+                <p class="text-lg text-gray-600">
+                    No te vendemos piezas sueltas. Construimos el sistema completo que atrae, convierte y fideliza clientes de forma predecible.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="fade-in icon-card">
-                    <i class="fas fa-clock"></i>
-                    <h3 class="text-xl font-semibold mb-4">Te vendemos <span class="highlight-text">TIEMPO</span></h3>
-                    <p>Las horas que pierdes peleando con la tecnología, las transformamos en horas que usas para atender a nuevos clientes.</p>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-gray-50 rounded-lg p-8 card-hover">
+                    <div class="text-4xl mb-4" style="color: var(--primary-blue);">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary-blue);">
+                        FASE 1: Visibilidad Local Máxima
+                    </h3>
+                    <p class="text-gray-700">
+                        Optimizamos tu presencia en Google para que seas la primera opción cuando un cliente en Concepción busca lo que ofreces.
+                    </p>
                 </div>
                 
-                <div class="fade-in icon-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3 class="text-xl font-semibold mb-4">Te vendemos un <span class="highlight-text">SISTEMA</span></h3>
-                    <p>Dejamos atrás las acciones aisladas y construimos un proceso predecible para atraer y convertir prospectos.</p>
+                <div class="bg-gray-50 rounded-lg p-8 card-hover">
+                    <div class="text-4xl mb-4" style="color: var(--primary-blue);">
+                        <i class="fas fa-mouse-pointer"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary-blue);">
+                        FASE 2: Página de Captura Letal
+                    </h3>
+                    <p class="text-gray-700">
+                        Creamos una landing page diseñada con un único objetivo: convertir a un visitante curioso en un cliente potencial con nombre y teléfono.
+                    </p>
                 </div>
                 
-                <div class="fade-in icon-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3 class="text-xl font-semibold mb-4">Te vendemos un <span class="highlight-text">RETORNO</span></h3>
-                    <p>Nuestra primera implementación con un negocio local generó un aumento de ventas de <span class="stats-highlight">$5.1 Millones</span> en 30 días. Esto no es un gasto, es una inversión.</p>
+                <div class="bg-gray-50 rounded-lg p-8 card-hover">
+                    <div class="text-4xl mb-4" style="color: var(--primary-blue);">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary-blue);">
+                        FASE 3: Sistema de Seguimiento
+                    </h3>
+                    <p class="text-gray-700">
+                        Implementamos procesos para que ningún lead se enfríe, asegurando que cada peso invertido en marketing trabaje para ti.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 lg:py-32">
-        <div class="container-custom">
-            <div class="fade-in text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6">Nuestro Proceso: <span class="highlight-text">Claridad en 3 Pasos</span>.</h2>
+    <section id="casos" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold" style="color: var(--primary-blue);">
+                    Nuestro Sistema en Acción
+                </h2>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="fade-in process-card">
-                    <div class="process-number">1</div>
-                    <h3 class="text-2xl font-bold mb-4">Diagnóstico</h3>
-                    <p class="text-lg">Analizamos tu negocio para encontrar la oportunidad real. La estrategia siempre precede a la acción.</p>
+            <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="text-lg font-semibold text-orange-500 mb-2">CASO DE ESTUDIO (Placeholder)</div>
+                        <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
+                            Ferretería Regional - Concepción
+                        </h3>
+                        <p class="text-gray-600 mb-6">
+                            Una ferretería familiar con 25 años de historia que luchaba por visibilidad contra las grandes cadenas.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                <span><strong class="text-gray-800">Antes:</strong> Dependencia total del boca a boca y clientes de paso.</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                <span><strong class="text-gray-800">Problema:</strong> Invisibles en búsquedas clave de Google, perdiendo clientes más jóvenes.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="bg-green-50 rounded-lg p-6">
+                            <h4 class="text-lg font-bold mb-4 text-green-800">
+                                Resultados en 90 días:
+                            </h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center border-b pb-2">
+                                    <span class="text-gray-700">Llamadas desde Google:</span>
+                                    <span class="font-bold text-2xl text-green-600">+340%</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b pb-2 pt-2">
+                                    <span class="text-gray-700">Nuevos clientes B2B:</span>
+                                    <span class="font-bold text-2xl text-green-600">+25</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-2">
+                                    <span class="text-gray-700">Retorno de Inversión:</span>
+                                    <span class="font-bold text-2xl text-green-600">420%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="fade-in process-card">
-                    <div class="process-number">2</div>
-                    <h3 class="text-2xl font-bold mb-4">Implementación</h3>
-                    <p class="text-lg">Construimos los activos que necesitas (Google, Landing Page, Redes Sociales) para que funcionen como un sistema.</p>
-                </div>
-                
-                <div class="fade-in process-card">
-                    <div class="process-number">3</div>
-                    <h3 class="text-2xl font-bold mb-4">Crecimiento</h3>
-                    <p class="text-lg">Medimos, optimizamos y te entregamos un plan para el crecimiento sostenido.</p>
+                <div class="mt-8 border-t pt-6">
+                     <p class="text-center text-gray-700 italic">
+                        <i class="fas fa-quote-left mr-2 text-orange-400"></i>
+                        "En 3 meses recuperamos la inversión del año. Ahora tenemos una fuente predecible de nuevos clientes. Localiza+ nos dio el sistema que no sabíamos que necesitábamos."
+                        <span class="block font-semibold text-right mt-2 not-italic">— Roberto M., Propietario (Placeholder)</span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="diagnostico" class="section-alternate py-20 lg:py-32">
-        <div class="container-custom">
-            <div class="fade-in text-center">
-                <h2 class="text-3xl md:text-5xl font-bold mb-8">Llevas tiempo diciendo <span class="highlight-text">"mañana lo haré"</span>.</h2>
-                <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed">
-                    Y llegaste aquí. El mañana es hoy. Deja de adivinar y empieza a construir.
+    <section id="cta-final" class="section-padding hero-gradient text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">
+                    Llevas tiempo diciendo "mañana lo haré".
+                </h2>
+                <p class="text-xl mb-8 text-gray-200">
+                    El diagnóstico es gratuito y te dará más claridad en 30 minutos que la que has tenido en los últimos 6 meses. La decisión es tuya.
                 </p>
-                <a href="https://calendly.com/localizamas/30min" class="btn-cta">
-                    <i class="fas fa-rocket mr-3"></i>
-                    ACTÚA AHORA - Agendar mi Diagnóstico Express
-                </a>
+                
+                <div class="space-y-4">
+                    <a href="https://calendly.com/localizamas/30min" 
+                       target="_blank" 
+                       class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg inline-flex items-center pulse-animation">
+                        <i class="fas fa-rocket mr-3"></i>
+                        ACTÚA AHORA - Agendar mi Diagnóstico Express
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container-custom text-center">
-            <h3 class="text-2xl font-bold mb-4 text-white">Localiza+</h3>
-            <p class="text-gray-300 mb-6">Construimos sistemas de crecimiento para pymes y emprendedores</p>
-            <p class="text-gray-400 text-sm">© 2024 Localiza+. Todos los derechos reservados.</p>
+    <footer class="bg-primary-blue text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <a href="#hero">
+                <img src="logotipo.jpg" alt="Localiza+ Logo" class="h-16 mx-auto mb-4">
+            </a>
+            <p class="text-gray-400 mb-6 max-w-md mx-auto">
+                Construimos sistemas de crecimiento para pymes en Concepción que se niegan a ser invisibles.
+            </p>
+            <div class="text-sm text-gray-500">
+                <p>&copy; 2024 Localiza+. Todos los derechos reservados.</p>
+                <p>Concepción, Bio Bio, Chile</p>
+            </div>
         </div>
     </footer>
-
-    <script>
-        // Intersection Observer para fade-in effects
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.fade-in').forEach(el => {
-                observer.observe(el);
-            });
-        });
-    </script>
 </body>
 </html>
